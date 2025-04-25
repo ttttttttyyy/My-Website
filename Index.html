@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>রিদওয়ান আহমেদ উৎসব | আধুনিক ওয়েবসাইট</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    :root {
+      --primary: #00ff66;
+      --background: #0f2027;
+      --text: #f0f0f0;
+    }
+    body.light {
+      --primary: #006633;
+      --background: #f0f0f0;
+      --text: #000000;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: all 0.4s ease;
+    }
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--background);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #preloader div {
+      border: 5px solid var(--primary);
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--primary);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      z-index: 999;
+    }
+    nav a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .theme-toggle, .language-toggle {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: var(--primary);
+      color: black;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 255, 102, 0.4);
+      z-index: 1000;
+    }
+    .theme-toggle { top: 100px; }
+    header {
+      text-align: center;
+      padding: 100px 20px 30px;
+      margin-top: 40px;
+    }
+    header h1 { font-size: 3.2rem; color: var(--primary); }
+    #typed-text { font-size: 1.2rem; color: var(--text); margin: 10px 0; }
+    #datetime { font-size: 0.95rem; color: #ccc; }
+    .info-card {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 255, 102, 0.2);
+    }
+    h2 {
+      font-size: 1.7rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 5px;
+    }
+    p, li, a {
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .gallery img { width: 100%; border-radius: 10px; transition: 0.3s ease; }
+    .gallery img:hover { transform: scale(1.05); }
+    iframe {
+      width: 100%; height: 300px; border: none; border-radius: 10px; margin-top: 15px;
+    }
+    .btn-download {
+      display: inline-block; background: var(--primary); color: black;
+      padding: 10px 25px; border-radius: 30px;
+      font-weight: bold; text-decoration: none;
+      margin-top: 15px;
+    }
+    .timeline {
+      border-left: 4px solid var(--primary);
+      padding-left: 20px;
+    }
+    .timeline div {
+      margin-bottom: 20px;
+    }
+    .testimonials {
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .testimonials div {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px; border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,255,102,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader"><div></div></div>
+  <nav>
+    <a href="#about">পরিচিতি</a>
+    <a href="#education">শিক্ষা</a>
+    <a href="#skills">দক্ষতা</a>
+    <a href="#timeline">অর্জন</a>
+    <a href="#testimonials">মতামত</a>
+    <a href="#portfolio">পোর্টফোলিও</a>
+    <a href="#contact">যোগাযোগ</a>
+  </nav>
+  <div class="language-toggle" onclick="toggleLanguage()">English</div>
+  <div class="theme-toggle" onclick="toggleTheme()">Dark Mode</div>  <header>
+    <h1 id="name">রিদওয়ান আহমেদ উৎসব</h1>
+    <div id="typed-text"></div>
+    <div id="datetime"></div>
+    <a class="btn-download" href="ridwan_cv.pdf" download>Download CV</a>
+  </header>  <section id="about" class="info-card">
+    <h2>পরিচিতি</h2>
+    <p>আমি একজন প্রযুক্তিপ্রেমী উদ্যমী তরুণ। কৃত্রিম বুদ্ধিমত্তা, প্রোগ্রামিং এবং কনটেন্ট ক্রিয়েশন আমার আগ্রহের মূল ক্ষেত্র।</p>
+  </section>  <section id="education" class="info-card">
+    <h2>একাডেমিক ইতিহাস</h2>
+    <ul>
+      <li>৩য় বর্ষ, ১ম সেমিস্টার – ইউনিভার্সিটি অফ স্কিল ইনরীচমেন্ট</li>
+      <li>এইচএসসি – হাজী মিসির আলি কলেজ, ২০২০</li>
+      <li>এসএসসি – হাজী পান্ডে আলী উচ্চ বিদ্যালয়, ২০১৮</li>
+    </ul>
+  </section>  <section id="skills" class="info-card">
+    <h2>দক্ষতা</h2>
+    <ul>
+      <li>Python, Java, C++</li>
+      <li>Microcontroller & Arduino Projects</li>
+      <li>Content Creation, Freelancing</li>
+    </ul>
+  </section>  <section id="timeline" class="info-card">
+    <h2>সফলতার টাইমলাইন</h2>
+    <div class="timeline">
+      <div><strong>2018:</strong> এসএসসি সফলভাবে সম্পন্ন</div>
+      <div><strong>2020:</strong> এইচএসসি এবং কম্পিউটার প্রশিক্ষণ</div>
+      <div><strong>2022:</strong> প্রজেক্ট "Smart Water Tap" সম্পন্ন</div>
+      <div><strong>2023:</strong> ইউটিউব কনটেন্ট ও ফ্রিল্যান্সিং শুরু</div>
+    </div>
+  </section>  <section id="testimonials" class="info-card">
+    <h2>মতামত</h2>
+    <div class="testimonials">
+      <div><strong>ফাহিম:</strong> “রিদওয়ান ভাই দারুণ কাজ করেন, আমি তার ভিডিও দেখে অনেক শিখেছি।”</div>
+      <div><strong>তামান্না:</strong> “Arduino নিয়ে তার দক্ষতা অনন্য। আমি তার সাথে কাজ করে অনেক কিছু শিখেছি।”</div>
+    </div>
+  </section>  <section id="portfolio" class="info-card">
+    <h2>পোর্টফোলিও</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Project+1">
+      <img src="https://via.placeholder.com/300x200?text=Arduino+Work">
+      <img src="https://via.placeholder.com/300x200?text=YouTube+Video">
+      <img src="https://via.placeholder.com/300x200?text=Freelance+Client">
+    </div>
+  </section>  <section id="contact" class="info-card">
+    <h2>যোগাযোগ</h2>
+    <p>ইমেইল: redwanahmed12100@gmail.com</p>
+    <p>মোবাইল: ০১৯৩৯৯৭৯৯৩২</p>
+  </section>  <script>
+    const typed = new Typed('#typed-text', {
+      strings: ['কম্পিউটার সাইন্স স্টুডেন্ট', 'ফ্রিল্যান্সার', 'প্রোগ্রামার', 'ইউটিউবার'],
+      typeSpeed: 50, backSpeed: 30, loop: true
+    });
+    function updateTime() {
+      document.getElementById('datetime').textContent = new Date().toLocaleString('bn-BD');
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    function toggleLanguage() {
+      const btn = document.querySelector('.language-toggle');
+      const isBangla = btn.textContent === 'English';
+      document.getElementById('name').textContent = isBangla ? 'Redwan Ahmed Utsob' : 'রিদওয়ান আহমেদ উৎসব';
+      btn.textContent = isBangla ? 'বাংলা' : 'English';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      document.querySelector('.theme-toggle').textContent = document.body.classList.contains('light') ? 'Light Mode' : 'Dark Mode';
+    }
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script></body>
+</html>
